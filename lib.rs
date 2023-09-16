@@ -45,9 +45,21 @@ pub mod my_psp34 {
     // Section contains default implementation without any modifications
 	
 	
-	impl AccessControlEnumerable for Contract {}
-    impl PSP34Enumerable for Contract {}
-	impl PSP34Metadata for Contract {}
+	impl AccessControlEnumerable for Contract {
+        //get_role_member
+        //get_role_member_count
+    }
+
+    impl PSP34Enumerable for Contract {
+        // balance_of
+        // increase_balance
+        // decrease_balance
+        // total_supply
+    }
+
+	impl PSP34Metadata for Contract {
+        // get_attribute
+    }
 
 	impl PSP34Burnable for Contract {
 		#[ink(message)]
