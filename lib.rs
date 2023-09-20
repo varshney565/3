@@ -147,7 +147,7 @@ pub mod my_psp34 {
         #[ink(constructor)]
         pub fn new() -> Self {
             let mut _instance = Self::default();
-			_instance.grant_role(MANAGER, _instance.env().caller()).expect("Should grant MANAGER role");
+            _instance._init_with_admin(_instance.env().caller());
 			_instance.grant_role(MANAGER, _instance.env().caller()).expect("Should grant MANAGER role");
 			let collection_id = _instance.collection_id();
 			_instance._set_attribute(collection_id.clone(), String::from("name"), String::from("MyPSP34"));
